@@ -1,12 +1,12 @@
 package structs
 
 type node struct {
-	Children map[rune]*node
+	children map[rune]*node
 	source   string
 }
 
 func newNode() *node {
-	return &node{Children: make(map[rune]*node, 1)}
+	return &node{children: make(map[rune]*node, 1)}
 }
 
 // SimpleTrie implementation
@@ -29,10 +29,10 @@ func (t *SimpleTrie) Add(value string) {
 	}
 	var current = t.root
 	for _, char := range value {
-		if _, ok := current.Children[char]; !ok {
-			current.Children[char] = newNode()
+		if _, ok := current.children[char]; !ok {
+			current.children[char] = newNode()
 		}
-		current = current.Children[char]
+		current = current.children[char]
 	}
 	if current.source != "" {
 		return
@@ -47,7 +47,7 @@ func (t *SimpleTrie) Lookup(value string) []string {
 	var node = t.root
 	var ok bool
 	for _, char := range value {
-		if node, ok = node.Children[char]; !ok {
+		if node, ok = node.children[char]; !ok {
 			return res
 		}
 	}
@@ -61,7 +61,7 @@ func getWords(node *node, res []string) []string {
 		res = append(res, node.source)
 	}
 
-	for _, value := range node.Children {
+	for _, value := range node.children {
 		res = getWords(value, res)
 	}
 	return res
