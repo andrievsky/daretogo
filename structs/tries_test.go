@@ -5,7 +5,7 @@ import (
 
 	"fmt"
 
-	"github.com/andrievsky/sunday/structs"
+	"github.com/andrievsky/daretogo/structs"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -59,7 +59,19 @@ func TestLookupItems(t *testing.T) {
 		trie.Add("five")
 		assert.Equal(t, 5, trie.Count())
 		var res = trie.Lookup("f")
-		assert.Equal(t, "four", res[0])
-		assert.Equal(t, "five", res[1])
+		assert.False(t, hasValue(res, "one"))
+		assert.False(t, hasValue(res, "two"))
+		assert.False(t, hasValue(res, "three"))
+		assert.True(t, hasValue(res, "four"))
+		assert.True(t, hasValue(res, "five"))
 	}
+}
+
+func hasValue(source []string, value string) bool{
+	for _, v := range source{
+		if v == value{
+			return true
+		}
+	}
+	return false
 }
