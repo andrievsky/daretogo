@@ -16,7 +16,7 @@ import (
 
 var wg sync.WaitGroup
 
-const maxFileSize = 5 * 1024 * 1024
+const maxFileSize = 4700 * 1024
 const destPath = "out/"
 
 // Computer display standard https://en.wikipedia.org/wiki/Computer_display_standard
