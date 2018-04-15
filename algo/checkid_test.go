@@ -22,19 +22,10 @@ func BenchmarkCheckForLetterAndDigit(b *testing.B) {
 	}
 }
 
+/*
 func TestCheckForLetterAndDigitRegex(t *testing.T) {
 	for i, c := range algo.LetterAndDigitCases {
 		assert.Equal(t, algo.LetterAndDigitResults[i], algo.CheckForLetterAndDigitWithRegex(c))
-	}
-}
-
-/*
-func BenchmarkCheckForLetterAndDigit(b *testing.B) {
-	// run the Fib function b.N times
-	for n := 0; n < b.N; n++ {
-		for _, c := range algo.LetterAndDigitCases {
-			algo.CheckForLetterAndDigit(c)
-		}
 	}
 }
 */

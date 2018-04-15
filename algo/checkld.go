@@ -1,7 +1,6 @@
 package algo
 
 import (
-	"regexp"
 	"unicode"
 )
 
@@ -29,8 +28,11 @@ func CheckForLetterAndDigit(s string) bool {
 	return false
 }
 
+// TODO Update to a valid regex
+/*
 // CheckForLetterAndDigitWithRegex same check with Regex
 func CheckForLetterAndDigitWithRegex(s string) bool {
 	var validID = regexp.MustCompile(`^(?=.*[A-Za-z])(?=.*[0-9]).+$`)
 	return validID.MatchString(s)
 }
+*/
