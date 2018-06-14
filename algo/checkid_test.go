@@ -1,4 +1,4 @@
-package algo_test
+package main
 
 import (
 	"testing"
