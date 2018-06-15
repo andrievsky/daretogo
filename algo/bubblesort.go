@@ -1,4 +1,4 @@
-package main
+package algo
 
 // Sort []int for O(N^2)
 func Sort(source []int) []int {
